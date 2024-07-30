@@ -8,9 +8,16 @@
     <title>Moment App</title>
   </head>
   <body>
-    <div class="sign-in-form">
-      <input type="text" placeholder="What is your name?" />
-      <button>Sign in</button>
-    </div>
+    <form id="sign-in-form" class="hidden">
+      <input
+        class="username"
+        type="text"
+        placeholder="What is your name?"
+        maxlength="15"
+        required
+      />
+      <input type="submit" value="Sign In" />
+    </form>
+    <h1 id="greeting" class="hidden"></h1>
   </body>
 </html>
