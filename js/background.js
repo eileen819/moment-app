@@ -31,7 +31,7 @@ const image = [
 
 const randomImage = image[Math.floor(Math.random() * image.length)];
 
-document.body.style.backgroundImage = `url(${randomImage.URL})`;
+document.body.style.backgroundImage = `linear-gradient(rgba(255,255,255,0.25), rgba(255,255,255,0.25)), url(${randomImage.URL})`;
 document.body.style.backgroundSize = "cover";
 document.body.style.backgroundRepeat = "no-repeat";
 document.body.style.backgroundAttachment = "fixed";
