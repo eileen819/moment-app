@@ -13,8 +13,8 @@ function onDeleteToDo(event) {
   const li = event.target.parentElement;
   li.remove();
   toDos = toDos.filter((todo) => todo.id !== parseInt(li.id)); // todo.id는 숫자, li.id는 문자이므로
-  // 새로운 배열을 만들었기때문에 로컬스토리지를 업데이트해 줘야 함
   saveToDos();
+  // 새로운 배열을 만들었기때문에 로컬스토리지를 업데이트해 줘야 함
 }
 
 function paintToDo(toDoObj) {
@@ -60,3 +60,7 @@ if (savedToDos !== null) {
   // 위의 코드를 작성하지 않으면 로컬스토리지에 데이터가 저장되어 있어도, 새롭게 추가하는 내용만 화면에 그려짐
   // why? forEach메소드는 로컬스토리지에 저장되어있는 값(배열)으로 동작되기 때문(연속으로 동작되는 게 아님 1번만 동작됨)
 }
+
+// 위의 코드들은 함수를 정의한 것이 대부분이며
+// 실제 실행되는 코드는 submit했을 때 발생하는 이벤트 리스너와 새로고침 후에 if 조건 통과 여부로 그려지는 화면
+// 이렇게 두가지 뿐임을 기억하자
