@@ -1,3 +1,134 @@
+body {
+  color: #2f3640;
+  font-size: 16px;
+  line-height: 1;
+  font-family: "Poppins", "Noto Serif KR", sans-serif;
+  font-weight: 400;
+  box-sizing: border-box;
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0px 20px;
+  position: relative;
+}
+
 .hidden {
   display: none;
+}
+
+.signIn-wrap {
+  margin-bottom: 10px;
+}
+
+.signIn-wrap .username {
+  width: 200px;
+  padding: 0px 10px;
+  font-size: 18px;
+  padding: 5px 10px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  border-bottom: 1px solid #2f3640;
+}
+
+.signIn-wrap .signIn {
+  border: 1px solid #2f3640;
+  border-radius: 25px;
+  padding: 5px 10px;
+  margin: 5px;
+  background-color: #353b48;
+  color: #f5f6fa;
+}
+
+.signIn-wrap #greeting {
+  font-size: 40px;
+}
+
+.time-weather-wrap #clock {
+  display: block;
+  font-size: 70px;
+  margin-bottom: 5px;
+}
+
+.time-weather-wrap #weather {
+  font-size: 18px;
+  padding: 0px 10px;
+}
+
+main {
+  max-width: 980px;
+  height: 70vh;
+  margin: 10px auto;
+  padding: 0px 20px;
+  position: relative;
+}
+
+.todolist-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.todolist-wrap h1 {
+  font-size: 35px;
+}
+
+.todolist-wrap #todo-form .todo-form_input {
+  width: 300px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  border-bottom: 1px solid #2f3640;
+  font-size: 18px;
+  margin: 10px;
+  padding: 0px 10px 5px 10px;
+}
+.todolist-wrap #todo-form .todo-form_input::placeholder {
+  text-align: center;
+}
+
+.todolist-wrap #todo-list {
+  width: 300px;
+}
+
+.todolist-wrap #todo-list li {
+  margin-bottom: 5px;
+  padding: 0px 10px;
+  border-bottom: 1px solid #718093;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todolist-wrap #todo-list li span {
+  margin-left: 10px;
+}
+
+.todolist-wrap #todo-list li button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+.quote-wrap {
+  width: 980px;
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  margin: 0 auto;
+}
+
+.quote-wrap #quote {
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.quote-wrap #quote span {
+  display: block;
 }

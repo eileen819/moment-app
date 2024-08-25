@@ -31,10 +31,21 @@ const image = [
 
 const randomImage = image[Math.floor(Math.random() * image.length)];
 
-document.body.style.backgroundImage = `linear-gradient(rgba(255,255,255,0.25), rgba(255,255,255,0.25)), url(${randomImage.URL})`;
+document.body.style.backgroundImage = `linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url(${randomImage.URL})`;
 document.body.style.backgroundSize = "cover";
 document.body.style.backgroundRepeat = "no-repeat";
 document.body.style.backgroundAttachment = "fixed";
+
+/* 
+Object.assign(document.body.style, {
+  backgroundImage: `linear-gradient(rgba(255,255,255,0.25), rgba(255,255,255,0.25)), url(${randomImage.URL})`,
+  backgroundSize: "cover",
+  backgroundRepeat: "no-repeat",
+  backgroundAttachment: "fixed",
+}); 
+
+Objet.assign() 메소드를 사용해서 객체데이터를 이용해서 여러 개의 css 값을 추가할 수 있음
+*/
 
 /* 
 const bgImage = document.createElement('img');

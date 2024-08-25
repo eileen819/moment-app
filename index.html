@@ -3,7 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moment App</title>
+
+    <!-- 스타일 초기화 -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css"
+    />
+
+    <!-- 구글 폰트 적용 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600&family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS 파일 연결 -->
     <link rel="stylesheet" href="./css/style.css" />
+
+    <!-- JS 파일 연결 -->
     <script defer src="./js/greeting.js"></script>
     <script defer src="./js/clock.js"></script>
     <script defer src="./js/quotes.js"></script>
@@ -11,32 +34,56 @@
     <script defer src="./js/todo.js"></script>
     <script type="module" defer src="./js/weather.js"></script>
     <script type="module" defer src="./api.js"></script>
-    <title>Moment App</title>
   </head>
   <body>
-    <form id="sign-in-form" class="hidden">
-      <input
-        class="username"
-        type="text"
-        placeholder="What is your name?"
-        maxlength="15"
-        required
-      />
-      <input type="submit" value="Sign In" />
-    </form>
-    <h2 id="clock">00:00</h2>
-    <div id="weather">
-      <span></span>
-      <span></span>
-    </div>
-    <h1 id="greeting" class="hidden"></h1>
-    <form id="todo-form">
-      <input type="text" placeholder="Write a To DO and Press Enter" required />
-    </form>
-    <ul id="todo-list"></ul>
-    <div id="quote">
-      <span></span>
-      <span></span>
-    </div>
+    <header>
+      <div class="inner">
+        <div class="signIn-wrap">
+          <form id="sign-in-form" class="hidden">
+            <input
+              class="username"
+              type="text"
+              placeholder="What is your name?"
+              maxlength="15"
+              required
+            />
+            <input class="signIn" type="submit" value="Sign In" />
+          </form>
+          <h1 id="greeting" class="hidden"></h1>
+        </div>
+
+        <div class="time-weather-wrap">
+          <h2 id="clock">00:00</h2>
+          <div id="weather">
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="todolist-wrap">
+        <h1>Today's To Do</h1>
+        <form id="todo-form">
+          <input
+            class="todo-form_input"
+            type="text"
+            placeholder="Write a To DO and Press Enter"
+            required
+          />
+        </form>
+        <ul id="todo-list"></ul>
+      </div>
+
+      <div class="quote-wrap">
+        <div id="quote">
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </main>
+
+    <footer></footer>
   </body>
 </html>

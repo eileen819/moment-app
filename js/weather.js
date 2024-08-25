@@ -11,7 +11,9 @@ async function foundGeo(position) {
   try {
     const response = await fetch(url);
     const data = await response.json();
-    weatherEl.innerText = `${data.weather[0].main} / ${data.main.temp}deg`;
+    weatherEl.innerText = `${data.weather[0].main} ${Math.floor(
+      data.main.temp
+    )}º, `;
     locationEl.innerText = data.name;
   } catch (error) {
     console.log(error);

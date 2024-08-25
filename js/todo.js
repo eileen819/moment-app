@@ -1,5 +1,5 @@
 const toDoForm = document.querySelector("#todo-form");
-const toDoInputeEl = toDoForm.querySelector("input");
+const toDoInputEl = toDoForm.querySelector("input");
 const toDoList = document.querySelector("#todo-list");
 
 const TODOS_KEY = "todos";
@@ -32,8 +32,8 @@ function paintToDo(toDoObj) {
 
 function onToDoSubmit(event) {
   event.preventDefault();
-  const newToDo = toDoInputeEl.value; // newToDo는 인풋요소의 value값을 복사한 것, 따라서 기존의 인풋값과 별개가 됨
-  toDoInputeEl.value = ""; // newToDo로 인풋값을 복사해뒀기 때문에, 기존의 값을 비워줄 수 있음
+  const newToDo = toDoInputEl.value; // newToDo는 인풋요소의 value값을 복사한 것, 따라서 기존의 인풋값과 별개가 됨
+  toDoInputEl.value = ""; // newToDo로 인풋값을 복사해뒀기 때문에, 기존의 값을 비워줄 수 있음
   const newToDoObj = {
     id: Date.now(),
     text: newToDo,
@@ -53,6 +53,7 @@ if (savedToDos !== null) {
   // 따라서 새로고침을 하면(새롭게 어플리케이션 시작) 기존에 데이터가 있다해도
   // 처음에 정의되어 있는 빈배열에 다시 push하게 됨으로 기존의 데이터가 삭제가 됨
   // 이런 오류를 방지하고자, toDos의 배열이 변경될 때, 데이터가 있는 상태로 업데이트(재정의) 해주는 것임
+  // useEffect처럼 웹페이지 열리는 초기에 실행되는 것
   parsedToDos.forEach(paintToDo);
   // forEach의 인수는 함수로 들어가야 하고,
   // forEach의 인수로 들어간 함수의 인수는 forEach가 사용될 배열아이템을 알아서 넣어줄 것임
@@ -62,5 +63,5 @@ if (savedToDos !== null) {
 }
 
 // 위의 코드들은 함수를 정의한 것이 대부분이며
-// 실제 실행되는 코드는 submit했을 때 발생하는 이벤트 리스너와 새로고침 후에 if 조건 통과 여부로 그려지는 화면
+// 실제 실행되는 코드는 submit했을 때 발생하는 이벤트 리스너와 새로고침 후에 처음에 if 조건 통과 여부로 그려지는 화면
 // 이렇게 두가지 뿐임을 기억하자
