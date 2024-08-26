@@ -5,17 +5,26 @@ body {
   font-family: "Poppins", "Noto Serif KR", sans-serif;
   font-weight: 400;
   box-sizing: border-box;
+  user-select: none;
 }
 
 .inner {
   max-width: 1200px;
-  margin: 20px auto;
+  height: 150px;
+  margin: 50px auto 20px auto;
   padding: 0px 20px;
   position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .hidden {
   display: none;
+}
+
+.complete {
+  text-decoration: line-through;
 }
 
 .signIn-wrap {
@@ -57,23 +66,121 @@ body {
   padding: 0px 10px;
 }
 
-main {
-  max-width: 980px;
-  height: 70vh;
-  margin: 10px auto;
-  padding: 0px 20px;
-  position: relative;
-}
-
-.todolist-wrap {
+.dday {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 0px 10px;
+}
+
+.dday #dday-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+.dday #dday-form.hidden {
+  display: none;
+}
+
+.dday #dday-form input.dday-title,
+.dday #dday-form input.dday-date {
+  width: 180px;
+  margin-bottom: 5px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  border-bottom: 1px solid #2f3640;
+  padding: 5px 10px;
+}
+
+.dday #dday-form .error-message {
+  font-size: 12px;
+  color: #e84118;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.dday .show-form {
+  padding: 5px 15px;
+  font-size: 18px;
+  border: 1px solid #2f3640;
+  border-radius: 20px;
+  background-color: transparent;
+  color: #2d3436;
+  margin-bottom: 20px;
+}
+
+.dday .cancel-form {
+  width: 25px;
+  height: 25px;
+  border: 1px solid #2f3640;
+  border-radius: 50%;
+  font-size: 20px;
+  background-color: transparent;
+  transform: rotate(45deg);
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+
+.dday #dday-form .add-dday {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 15px;
+  margin-top: 5px;
+}
+
+.dday .dday-list {
+  overflow: auto;
+}
+
+.dday .dday-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dday .dday-list li span.d-day_title {
+  margin-right: 20px;
+  flex-grow: 1;
+}
+
+.dday .dday-list li span.d-day_leftTime {
+  margin-right: 5px;
+}
+.dday .dday-list li .remove-dday {
+  border: none;
+  background-color: transparent;
+  font-family: "Material Symbols Outlined";
+  font-size: 16px;
+  padding: 0px;
+  cursor: pointer;
+}
+
+main {
+  max-width: 980px;
+  margin: 0px auto;
+  padding: 0px 20px;
+}
+
+.todolist-wrap {
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: auto;
+  margin-bottom: 10px;
 }
 
 .todolist-wrap h1 {
   font-size: 35px;
+  margin-bottom: 10px;
 }
 
 .todolist-wrap #todo-form .todo-form_input {
@@ -92,32 +199,51 @@ main {
 
 .todolist-wrap #todo-list {
   width: 300px;
+  margin-top: 10px;
 }
 
 .todolist-wrap #todo-list li {
-  margin-bottom: 5px;
-  padding: 0px 10px;
+  margin-bottom: 10px;
+  padding: 0px 10px 3px 10px;
   border-bottom: 1px solid #718093;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.todolist-wrap #todo-list li span {
-  margin-left: 10px;
+.todolist-wrap #todo-list li .todo-text input {
+  display: none;
+}
+
+.todo-text label::before {
+  content: "";
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border: 1px solid #2f3640;
+  border-radius: 5px;
+  margin-right: 10px;
+  cursor: pointer;
+  vertical-align: bottom;
+}
+
+.todo-text input:checked + label::before {
+  font-family: "Material Symbols Outlined";
+  content: "\e5ca";
+  background-color: #74b9ff;
 }
 
 .todolist-wrap #todo-list li button {
   border: none;
   outline: none;
   background-color: transparent;
+  font-family: "Material Symbols Outlined";
+  font-size: 16px;
+  cursor: pointer;
 }
 
 .quote-wrap {
   width: 980px;
-  position: absolute;
-  left: 0px;
-  bottom: 0px;
   margin: 0 auto;
 }
 
