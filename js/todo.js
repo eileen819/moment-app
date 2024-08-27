@@ -20,9 +20,6 @@ function paintToDo(newToDoObj) {
   const li = document.createElement("li");
   li.id = newToDoObj.id;
 
-  const div = document.createElement("div");
-  div.classList.add("todo-text");
-
   const checkInput = document.createElement("input");
   checkInput.setAttribute("type", "checkbox");
   checkInput.id = `checkbox-${newToDoObj.id}`;
@@ -30,7 +27,11 @@ function paintToDo(newToDoObj) {
 
   const label = document.createElement("label");
   label.setAttribute("for", `checkbox-${newToDoObj.id}`);
-  label.innerText = newToDoObj.todo;
+  label.classList.add("todo-text");
+
+  const span = document.createElement("span");
+  span.classList.add("label-text");
+  span.innerText = newToDoObj.todo;
 
   if (checkInput.checked) {
     label.classList.add("complete");
@@ -46,8 +47,8 @@ function paintToDo(newToDoObj) {
   removeBtn.innerText = "delete";
   removeBtn.addEventListener("click", removeToDo);
 
-  div.append(checkInput, label);
-  li.append(div, removeBtn);
+  label.append(checkInput, span);
+  li.append(label, removeBtn);
   toDoList.appendChild(li);
 }
 

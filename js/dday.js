@@ -105,6 +105,9 @@ removeFormBtn.addEventListener("click", () => {
   removeFormBtn.classList.add("hidden");
   showFormBtn.classList.remove("hidden");
   ddayList.classList.remove("hidden");
+  ddayTitle.value = "";
+  ddayDate.value = "";
+  errorMessage.innerText = "";
 });
 
 ddayForm.addEventListener("submit", onSubmitDday);

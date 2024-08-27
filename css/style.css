@@ -8,6 +8,12 @@ body {
   user-select: none;
 }
 
+body input {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
 .inner {
   max-width: 1200px;
   height: 150px;
@@ -21,10 +27,6 @@ body {
 
 .hidden {
   display: none;
-}
-
-.complete {
-  text-decoration: line-through;
 }
 
 .signIn-wrap {
@@ -216,7 +218,15 @@ main {
   display: none;
 }
 
-.todo-text label::before {
+.todo-text {
+  display: flex;
+}
+
+.todo-text.complete span {
+  text-decoration: line-through;
+}
+
+.todo-text::before {
   content: "";
   display: inline-block;
   width: 15px;
@@ -226,12 +236,14 @@ main {
   margin-right: 10px;
   cursor: pointer;
   vertical-align: bottom;
+  flex-shrink: 0;
 }
 
-.todo-text input:checked + label::before {
+.todo-text.complete::before {
   font-family: "Material Symbols Outlined";
   content: "\e5ca";
   background-color: #74b9ff;
+  text-decoration: none;
 }
 
 .todolist-wrap #todo-list li button {
