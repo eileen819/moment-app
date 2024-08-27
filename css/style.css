@@ -15,12 +15,16 @@ input {
   border-radius: 0;
 }
 
-input[type="submit"],
+button {
+  color: inherit;
+}
+
+/* input[type="submit"],
 button {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-}
+} */
 
 .inner {
   max-width: 1200px;
@@ -232,6 +236,8 @@ main {
 
 .todo-text span {
   line-height: 1.2;
+  overflow-wrap: break-word;
+  word-break: break-all;
 }
 
 .todo-text.complete span {
