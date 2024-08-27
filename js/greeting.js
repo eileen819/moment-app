@@ -8,7 +8,7 @@ const HIDDEN_CLASSNAME = "hidden";
 const USERNAME_KEY = "username";
 
 function faintGreeting(username) {
-  greetingEl.innerText = `Hello! ${username}🩵`;
+  greetingEl.innerText = `Hello, ${username}!`;
   greetingEl.classList.remove(HIDDEN_CLASSNAME);
 }
 
