@@ -8,10 +8,18 @@ body {
   user-select: none;
 }
 
-body input {
+input {
   border: none;
   outline: none;
   background-color: transparent;
+  border-radius: 0;
+}
+
+input[type="submit"],
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 .inner {
@@ -109,7 +117,7 @@ body input {
 
 .dday .show-form {
   padding: 5px 15px;
-  font-size: 18px;
+  font-size: 16px;
   border: 1px solid #2f3640;
   border-radius: 20px;
   background-color: transparent;
@@ -220,6 +228,10 @@ main {
 
 .todo-text {
   display: flex;
+}
+
+.todo-text span {
+  line-height: 1.2;
 }
 
 .todo-text.complete span {
