@@ -19,13 +19,6 @@ button {
   color: inherit;
 }
 
-/* input[type="submit"],
-button {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-} */
-
 .inner {
   max-width: 1200px;
   height: 150px;
@@ -36,10 +29,29 @@ button {
   justify-content: space-between;
   align-items: center;
 }
+@media (max-width: 768px) {
+  .inner {
+    margin: 50px 20px 20px 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    margin: 50px 20px 20px 20px;
+    height: auto;
+  }
+}
 
 .hidden {
   display: none;
 }
+
+/* sign-in */
 
 .signIn-wrap {
   margin-bottom: 10px;
@@ -69,6 +81,14 @@ button {
   font-size: 40px;
 }
 
+/* weather */
+
+@media (max-width: 600px) {
+  .time-weather-wrap {
+    margin: 0px auto;
+  }
+}
+
 .time-weather-wrap #clock {
   display: block;
   font-size: 70px;
@@ -79,6 +99,8 @@ button {
   font-size: 18px;
   padding: 0px 10px;
 }
+
+/* D-Day */
 
 .dday {
   display: flex;
@@ -147,10 +169,16 @@ button {
   cursor: pointer;
   font-size: 15px;
   margin-top: 5px;
+  color: inherit;
 }
 
 .dday .dday-list {
   overflow: auto;
+}
+@media (max-width: 600px) {
+  .dday .dday-list {
+    overflow: visible;
+  }
 }
 
 .dday .dday-list li {
@@ -177,11 +205,21 @@ button {
   cursor: pointer;
 }
 
+/* To-Do List */
+
 main {
   max-width: 980px;
   margin: 0px auto;
   padding: 0px 20px;
 }
+/* @media (max-width: 600px) {
+  main {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+} */
 
 .todolist-wrap {
   height: 400px;
@@ -189,8 +227,12 @@ main {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  overflow: auto;
   margin-bottom: 10px;
+}
+@media (max-width: 600px) {
+  .todolist-wrap {
+    height: auto;
+  }
 }
 
 .todolist-wrap h1 {
@@ -215,6 +257,12 @@ main {
 .todolist-wrap #todo-list {
   width: 300px;
   margin-top: 10px;
+  overflow: auto;
+}
+@media (max-width: 600px) {
+  .todolist-wrap #todo-list {
+    overflow: visible;
+  }
 }
 
 .todolist-wrap #todo-list li {
@@ -273,9 +321,16 @@ main {
   cursor: pointer;
 }
 
+/* quote */
+
 .quote-wrap {
-  width: 980px;
-  margin: 0 auto;
+  max-width: 980px;
+  margin: 10px auto;
+}
+@media (max-width: 600px) {
+  .quote-wrap {
+    margin: 10px 20px;
+  }
 }
 
 .quote-wrap #quote {
@@ -288,4 +343,5 @@ main {
 
 .quote-wrap #quote span {
   display: block;
+  text-align: center;
 }
