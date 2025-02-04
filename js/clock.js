@@ -8,7 +8,7 @@ function getClock() {
   clockEl.innerText = `${hours}:${minutes}:${seconds}`;
 }
 
-getClock();
+getClock(); // 페이지가 바뀌면 바로 실행될 수 있도록 함수를 먼저 호출해 줌
 setInterval(getClock, 1000);
 
 /* 

@@ -20,14 +20,14 @@ function paintToDo(newToDoObj) {
   const li = document.createElement("li");
   li.id = newToDoObj.id;
 
+  const label = document.createElement("label");
+  label.setAttribute("for", `checkbox-${newToDoObj.id}`);
+  label.classList.add("todo-text");
+
   const checkInput = document.createElement("input");
   checkInput.setAttribute("type", "checkbox");
   checkInput.id = `checkbox-${newToDoObj.id}`;
   checkInput.checked = newToDoObj.completed;
-
-  const label = document.createElement("label");
-  label.setAttribute("for", `checkbox-${newToDoObj.id}`);
-  label.classList.add("todo-text");
 
   const span = document.createElement("span");
   span.classList.add("label-text");

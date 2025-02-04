@@ -9,10 +9,12 @@ const ddayList = document.querySelector(".dday-list");
 const D_DAY_KEY = "d-days";
 let ddays = [];
 
+// Save D-day Data to localStorage
 function saveDday() {
   localStorage.setItem(D_DAY_KEY, JSON.stringify(ddays));
 }
 
+// Delete D-day
 function removeEl(event) {
   const targetEl = event.target.parentElement;
   targetEl.remove();
@@ -20,6 +22,7 @@ function removeEl(event) {
   saveDday();
 }
 
+// Show D-Day List
 function paintDday(newDdayObj, li) {
   const timeText = li.querySelector(".d-day_leftTime");
   function countDays() {
@@ -40,6 +43,7 @@ function paintDday(newDdayObj, li) {
   setInterval(countDays, 1000);
 }
 
+// Make Elements for D-Day List
 function addDday(newDdayObj) {
   const li = document.createElement("li");
   li.id = newDdayObj.id;
@@ -62,6 +66,7 @@ function addDday(newDdayObj) {
   paintDday(newDdayObj, li);
 }
 
+// Add D-Day
 function onSubmitDday(event) {
   event.preventDefault();
 
@@ -93,6 +98,7 @@ function onSubmitDday(event) {
   ddayList.classList.remove("hidden");
 }
 
+// Show Add D-Day Form
 showFormBtn.addEventListener("click", () => {
   ddayForm.classList.remove("hidden");
   showFormBtn.classList.add("hidden");
@@ -100,6 +106,7 @@ showFormBtn.addEventListener("click", () => {
   ddayList.classList.add("hidden");
 });
 
+// When click form-cancel button
 removeFormBtn.addEventListener("click", () => {
   ddayForm.classList.add("hidden");
   removeFormBtn.classList.add("hidden");

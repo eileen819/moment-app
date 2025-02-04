@@ -56,10 +56,12 @@ Object.assign(document.body.style, {
   backgroundAttachment: "fixed",
 }); 
 
-Objet.assign() 메소드를 사용해서 객체데이터를 이용해서 여러 개의 css 값을 추가할 수 있음
+Objet.assign() 메소드를 사용해서 객체데이터를 이용해서 여러 개의 css 값을 한 번에 추가할 수 있음
 */
 
 /* 
+** 수업내용 코드 **
+
 const bgImage = document.createElement('img');
 bgImage.src = `img/${randomImage}`;
 document.body.appendChild(bgImage);
