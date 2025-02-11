@@ -19,10 +19,14 @@ button {
   color: inherit;
 }
 
+a {
+  text-decoration: none;
+}
+
 .inner {
   max-width: 1200px;
   height: 150px;
-  margin: 50px auto 20px auto;
+  margin: 30px auto 20px auto;
   padding: 0px 20px;
   position: relative;
   display: flex;
@@ -31,12 +35,12 @@ button {
 }
 @media (max-width: 1000px) {
   .inner {
-    margin: 50px 20px 20px 20px;
+    margin: 30px 20px 20px 20px;
   }
 }
 @media (max-width: 768px) {
   .inner {
-    margin: 50px 20px 20px 20px;
+    margin: 30px 20px 20px 20px;
   }
 }
 
@@ -47,7 +51,7 @@ button {
     justify-content: flex-start;
     align-items: center;
     gap: 20px;
-    margin: 50px 20px 20px 20px;
+    margin: 30px 20px 20px 20px;
     height: auto;
   }
 }
@@ -220,6 +224,11 @@ main {
   margin: 0px auto;
   padding: 0px 20px;
 }
+@media (max-width: 600px) {
+  main {
+    min-height: 50vh;
+  }
+}
 
 .todolist-wrap {
   height: 400px;
@@ -350,4 +359,39 @@ main {
   margin-top: 5px;
   font-size: 12px;
   color: #4e4e4e;
+}
+
+/* footer */
+
+footer {
+  background-color: #dadada;
+  color: #343535;
+}
+
+footer a {
+  color: #6c6c6c;
+}
+
+footer .footer-wrap {
+  max-width: 1200px;
+  /* margin: 0 auto; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  padding: 10px;
+}
+
+footer .social-links {
+  display: flex;
+  margin-bottom: 5px;
+}
+
+footer .social-links a:first-child {
+  margin-right: 10px;
+}
+
+footer .social-links a:last-child {
+  margin-left: 10px;
 }
