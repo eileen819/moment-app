@@ -155,29 +155,17 @@ $ cd moment-app
 
 - **DOM 조작 & 이벤트 핸들링**
 
-  - JavaScript에서 `addEventListener`, `querySelector` 등을 사용하여 동적인 UI를 구현하는 방법을 익힘
+  - JavaScript에서 `addEventListener`, `querySelector` 등을 사용하여 동적인 UI를 구현하는 방법을 학습
 
 - **로컬 스토리지를 활용한 데이터 저장 방법**
 
-  - `localStorage`를 활용하여 사용자가 입력한 데이터를 브라우저에 저장하고, 새로고침해도 유지되도록 하는 방법을 익힘
+  - `localStorage`를 활용하여 사용자가 입력한 데이터를 브라우저에 저장하고, 새로고침해도 유지되도록 하는 방법을 학습
 
 - **할 일 목록의 상태 관리 구현**
 
-  - JavaScript에서 `push()`를 활용하여 새로운 할 일을 배열에 추가하고, `filter()`를 활용하여 삭제하는 기능을 구현
+  - JavaScript에서 `push()`를 활용하여 새로운 할 일을 배열에 추가하고, `filter()`를 활용하여 삭제하는 기능을 구현하는 방법을 학습
 
 - **OpenWeather API 데이터 처리**
-  - API 호출을 통해 받아온 JSON 데이터를 `async/await`를 이용하여 **비동기코드를 처리하는 방법**을 익힘
+  - API 호출을 통해 받아온 JSON 데이터를 `async/await`를 이용하여 **비동기코드를 처리하는 방법**을 학습
   - 응답 데이터를 분석하고, 필요한 정보(온도, 날씨 상태)를 추출하여 UI에 반영함
-
-===
-아래는 예시
-
-### DOM 동적 조작
-
-- `addEventListener`와 `querySelector`를 활용한 인터랙티브 UI 구현
-- 예시: 할 일 추가/삭제 시 실시간 DOM 업데이트 기법
-
-### 비동기 데이터 처리
-
-- `async/await`를 사용한 OpenWeather API 데이터 비동기 처리
-- 에러 핸들링과 로딩 상태 관리 방법 학습
+  - 에러 핸들링과 로딩 상태 관리 방법에 대해서 학습

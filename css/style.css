@@ -226,7 +226,7 @@ main {
 }
 @media (max-width: 600px) {
   main {
-    min-height: 50vh;
+    min-height: 60vh;
   }
 }
 
