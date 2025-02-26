@@ -17,6 +17,17 @@ function saveDday() {
 // Delete D-day
 function removeEl(event) {
   const targetEl = event.target.parentElement;
+
+  if (targetEl.intervalId) {
+    clearInterval(targetEl.intervalId);
+    console.log("delete interval (intervalId)");
+  }
+  if (targetEl.scheduleIntervalId) {
+    // scheduleIntervalId는 처음 setTimeout으로 생성된 경우이므로 clearTimeout로 해제
+    clearTimeout(targetEl.scheduleIntervalId);
+    console.log("delete interval (scheduleIntervalId)");
+  }
+
   targetEl.remove();
   ddays = ddays.filter((dday) => dday.id !== parseInt(targetEl.id));
   saveDday();
@@ -29,18 +40,32 @@ function paintDday(newDdayObj, li) {
     const now = new Date().getTime();
     const targetTime = new Date(newDdayObj.date).getTime();
     const diff = targetTime - now;
-    const days = String(Math.floor(diff / (1000 * 60 * 60 * 24)));
+    const days = String(Math.round(diff / (1000 * 60 * 60 * 24)));
 
     if (diff > 0) {
       timeText.innerText = `D-${days}`;
-    } else if (diff === 0) {
+    } else if (diff > -1000 * 60 * 60 * 24) {
       timeText.innerText = `오늘은 ${newDdayObj.title}의 날입니다.`;
     } else {
       timeText.innerText = `D+${Math.abs(days)}`;
     }
   }
+
+  function scheduleDailyUpdate() {
+    const now = new Date();
+    const midnight = new Date(now);
+    midnight.setDate(now.getDate() + 1);
+    midnight.setHours(0, 0, 0, 0);
+    const remainingTime = midnight.getTime() - now.getTime();
+
+    li.scheduleIntervalId = setTimeout(() => {
+      countDays();
+      li.scheduleIntervalId = setInterval(countDays, 86400000);
+    }, remainingTime);
+  }
   countDays();
-  setInterval(countDays, 1000);
+  scheduleDailyUpdate();
+  console.log("interval 실행");
 }
 
 // Make Elements for D-Day List
