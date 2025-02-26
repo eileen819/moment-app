@@ -23,7 +23,6 @@ function removeEl(event) {
     console.log("delete interval (intervalId)");
   }
   if (targetEl.scheduleIntervalId) {
-    // scheduleIntervalId는 처음 setTimeout으로 생성된 경우이므로 clearTimeout로 해제
     clearTimeout(targetEl.scheduleIntervalId);
     console.log("delete interval (scheduleIntervalId)");
   }
@@ -65,7 +64,6 @@ function paintDday(newDdayObj, li) {
   }
   countDays();
   scheduleDailyUpdate();
-  console.log("interval 실행");
 }
 
 // Make Elements for D-Day List

@@ -8,11 +8,5 @@ function getClock() {
   clockEl.innerText = `${hours}:${minutes}:${seconds}`;
 }
 
-getClock(); // 페이지가 바뀌면 바로 실행될 수 있도록 함수를 먼저 호출해 줌
+getClock();
 setInterval(getClock, 1000);
-
-/* 
-new Date().getHours().toLocaleString().padStart(2, "0")
-이런 식으로 해도 숫자를 문자로 만들어서 표시해 줄 수가 있음
-toLocaleString()을 사용하면 13시가 pm 1시로 표현됨
-*/

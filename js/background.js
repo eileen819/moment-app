@@ -47,24 +47,3 @@ document.body.style.backgroundImage = `linear-gradient(rgba(255,255,255,0.6), rg
 document.body.style.backgroundSize = "cover";
 document.body.style.backgroundRepeat = "no-repeat";
 document.body.style.backgroundAttachment = "fixed";
-
-/* 
-Object.assign(document.body.style, {
-  backgroundImage: `linear-gradient(rgba(255,255,255,0.25), rgba(255,255,255,0.25)), url(${randomImage.URL})`,
-  backgroundSize: "cover",
-  backgroundRepeat: "no-repeat",
-  backgroundAttachment: "fixed",
-}); 
-
-Objet.assign() 메소드를 사용해서 객체데이터를 이용해서 여러 개의 css 값을 한 번에 추가할 수 있음
-*/
-
-/* 
-** 수업내용 코드 **
-
-const bgImage = document.createElement('img');
-bgImage.src = `img/${randomImage}`;
-document.body.appendChild(bgImage);
-
-createElement 또는 innerHTML 이용해서 이렇게 코드를 짤 수도 있음
-*/
