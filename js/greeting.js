@@ -28,17 +28,19 @@ function onSignInSubmit(event) {
   localStorage.setItem(USERNAME_KEY, username);
   faintGreeting(username);
   editUserNameBtn.classList.remove(HIDDEN_CLASSNAME);
+  formBtn.value = "Sign In";
 }
 
-editUserNameBtn.addEventListener("click", () => {
+function onEditUserName() {
   inputEl.value = localStorage.getItem(USERNAME_KEY);
   greetingEl.classList.add(HIDDEN_CLASSNAME);
   editUserNameBtn.classList.add(HIDDEN_CLASSNAME);
   signInForm.classList.remove(HIDDEN_CLASSNAME);
   formBtn.value = "Edit";
-});
+}
 
 signInForm.addEventListener("submit", onSignInSubmit);
+editUserNameBtn.addEventListener("click", onEditUserName);
 const savedUsername = localStorage.getItem(USERNAME_KEY);
 
 if (savedUsername === null) {
