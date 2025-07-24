@@ -13,7 +13,7 @@ async function foundGeo(position) {
   } catch (error) {
     console.log(error);
   } finally {
-    console.log("done!");
+    console.log("Have a nice day!");
   }
 }
 

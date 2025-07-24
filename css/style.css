@@ -77,17 +77,41 @@ a {
   border-bottom: 1px solid #2f3640;
 }
 
-.signIn-wrap .signIn {
+.signIn-wrap .signIn-btn {
   border: 1px solid #2f3640;
   border-radius: 25px;
   padding: 5px 10px;
   margin: 5px;
   background-color: #353b48;
   color: #f5f6fa;
+  cursor: pointer;
 }
 
-.signIn-wrap #greeting {
+.greeting-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.greeting-wrapper #greeting {
   font-size: 40px;
+}
+
+.greeting-wrapper #edit-username {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+}
+
+.greeting-wrapper #edit-username span {
+  font-size: 26px;
+  padding: 0;
+}
+
+.signIn-wrap #edit-username:hover {
+  color: #74b9ff;
 }
 
 /* weather */
@@ -161,6 +185,7 @@ a {
   background-color: transparent;
   color: #2d3436;
   margin-bottom: 20px;
+  cursor: pointer;
 }
 
 .dday .cancel-form {
@@ -356,7 +381,7 @@ main {
 }
 
 .quote-wrap #quote span:last-child {
-  margin-top: 5px;
+  margin-top: 10px;
   font-size: 12px;
   color: #4e4e4e;
 }
