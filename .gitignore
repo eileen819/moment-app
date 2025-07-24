@@ -1,3 +1,9 @@
 api.js
 /testcode
 .vscode
+
+# Local Netlify folder
+.netlify
+
+# API
+.env

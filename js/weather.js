@@ -1,20 +1,15 @@
-import { config } from "../api.js";
-
 const weatherEl = document.querySelector("#weather span:first-child");
 const locationEl = document.querySelector("#weather span:last-child");
-const API_KEY = config.API_KEY;
 
 async function foundGeo(position) {
   const lat = position.coords.latitude;
   const lon = position.coords.longitude;
-  const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
+
   try {
-    const response = await fetch(url);
+    const response = await fetch(`/api/getWeather?lat=${lat}&lon=${lon}`);
     const data = await response.json();
-    weatherEl.innerText = `${data.weather[0].main} ${Math.floor(
-      data.main.temp
-    )}º, `;
-    locationEl.innerText = data.name;
+    weatherEl.innerText = `${data.weather} ${Math.floor(data.temp)}º, `;
+    locationEl.innerText = data.location;
   } catch (error) {
     console.log(error);
   } finally {
