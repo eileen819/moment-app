@@ -1,15 +1,14 @@
 # 📒 Moment App
 
-사이트 주소와 화면캡처 넣기
-
-🔗 **배포 주소:** [Moment App](https://moment-of-today.netlify.app/)
+사이트 주소와 화면캡처 넣기  
+🔗 [Moment App](https://moment-of-today.netlify.app/)
 
 <br/>
 
 ## 📌 프로젝트 개요
 
 - Moment App은 **사용자의 목표 관리와 생산성을 높이는 To-Do List 웹 애플리케이션**입니다.
-- HTML, CSS, JavaScript 학습을 위해 개발되었으며, 기존의 할 일 관리 기능뿐만 아니라, **D-Day 기능, 랜덤 명언, 실시간 날씨 정보, 다크 모드**를 추가하여 **동기부여를 제공하는 기능**을 포함하고 있습니다. 또한, **반응형 디자인을 적용하여 모바일에서도 편리하게 사용할 수 있도록 설계**되었습니다.
+- HTML, CSS, JavaScript 학습을 위해 개발되었으며, 기존의 **할 일 관리 기능**뿐만 아니라, **D-Day 기능, 랜덤 명언, 실시간 날씨 정보**를 추가하여 **동기부여를 제공하는 기능**을 포함하고 있습니다. 또한, **반응형 디자인을 적용**하여 모바일에서도 편리하게 사용할 수 있도록 설계되었습니다.
 
   <br/>
 
@@ -19,7 +18,7 @@
 
 - 사용자가 **해야할 일을 입력**해서 **목록에 추가**할 수 있음
 - **체크박스를 클릭**해서 할 일의 **완료 체크**가 가능
-- **휴지통 아이콘을 클릭**하여 할 일을 목록을 **삭제**할 수 있음
+- **휴지통 아이콘을 클릭**하여 할 일을 목록에서 **삭제**할 수 있음
 - **`localStorage`를 활용한 데이터의 저장 기능**으로 새로고침을 해도 데이터가 유지됨
 
 ### ✅ D-day List
@@ -55,8 +54,9 @@
 - **HTML**: 웹 페이지 구조 및 설계
 - **CSS**: 레이아웃 및 반응형 스타일링
 - **JavaScript**: 동적 UI 기능 구현
-- **openWeather API**: 실시간 날씨 정보 제공
-- **Netlify**: 배포 및 호스팅
+- **localStorage**: 사용자 이름, D-Day 정보, To-Do 항목 저장 및 상태 관리
+- **OpenWeather API**: 실시간 날씨 정보 제공
+- **Netlify**: 정적 페이지 배포 및 Netlify Functions 기반 서버리스 API 프록시 구현, 환경 변수 설정을 통한 API 키 보안 관리
 
   <br/>
 
@@ -74,8 +74,15 @@ chrome-app-js
 ┃ ┣ quotes.js
 ┃ ┣ todo.js
 ┃ ┗ weather.js
+┣ netlify
+┃ ┗ functions
+┃ ┃ ┗ getWeather.js
+┣ .env
 ┣ README.md
-┗ index.html
+┣ index.html
+┣ netlify.toml
+┣ package-lock.json
+┗ package.json
 ```
 
 <br/>
@@ -85,7 +92,18 @@ chrome-app-js
 이 프로젝트는 GitHub와 연동되어있는 Netlify를 사용하여 자동 배포됩니다.
 최신 코드를 GitHub에 push하면 **Netlify에서 자동으로 빌드 & 배포**됩니다.
 
+---
+
 ### 🖥️ 로컬 실행 방법
+
+이 프로젝트는 HTML, CSS, JavaScript를 기반으로 동작하며,  
+**실시간 날씨 기능은 Netlify Functions를 통해 서버리스 API를 호출하는 구조**로 구성되어 있습니다.
+
+따라서 **전체 기능을 테스트하려면 Netlify CLI를 사용해야** 하며,  
+**정적 페이지 실행만 원하는 경우에는 Live Server로도 확인할 수 있습니다.**  
+📍 참고: 정적 페이지(Live Server)로 실행 시 Netlify Functions를 사용하는 **날씨 기능은 작동하지 않습니다.**
+
+---
 
 **1. 프로젝트 클론**
 
@@ -94,23 +112,34 @@ $ git clone https://github.com/eileen819/moment-app.git
 $ cd moment-app
 ```
 
-**2. 라이브 서버 실행**
+**2. 의존성 설치**
 
-- 이 프로젝트는 HTML, CSS, JavaScript만 사용하므로 별도의 빌드 과정 없이 실행할 수 있습니다.
-- VS Code 확장 프로그램인 Live Server를 사용하는 것을 추천합니다.
+```bash
+$ npm install
+```
 
-  > **📍 Live Server 확장 프로그램 사용 방법**
-  >
-  > 1.  VS Code에서 index.html 파일을 열기
-  > 1.  Live Server 확장 프로그램을 설치 후 실행
+**3. `.env` 파일 생성**
+
+```env
+API_KEY=your_openweather_api_key
+```
+
+**4. Netlify CLI 실행 (로컬 서버 + 함수 통합 실행)**
+
+```bash
+$ netlify dev
+```
+
+> ✅ http://localhost:8888에서 모든 기능 확인 가능  
+> (Functions 요청은 자동으로 /api/\*로 라우팅됨)
 
 <br/>
 
 ## 🔄 개선 예정 기능 (업데이트 계획)
 
-### ✔️ API Key 보안 강화 (예상 완료: 2025년 2월 중)
+<!-- ### ✔️ API Key 보안 강화 (예상 완료: 2025년 2월 중)
 
-📍 문제  
+📍 문제
 현재 API Key를 `api.js` 파일에 저장하고 `.gitignore`로 숨겼지만, 이는 클라이언트에서 실행되는 코드에 포함되므로 보안상 취약함
 
 👉 해결
@@ -122,7 +151,7 @@ $ cd moment-app
 
 ### ✔️ 사용자 이름 변경 기능 추가 (예상 완료: 2025년 2월 말)
 
-📍 문제  
+📍 문제
 현재는 최초에 입력한 사용자 이름이 한 번 저장되면 수정할 수가 없음
 
 👉 해결
@@ -130,9 +159,9 @@ $ cd moment-app
 - **수정 아이콘을 클릭**하면 **입력 필드 & 수정 버튼**이 나타나 사용자가 기존의 이름을 변경할 수 있도록 UI 개선 예정
 - 수정된 이름을 `localStorage`에 다시 저장하여, 새로고침 후에도 변경된 이름이 유지되도록 구현할 계획
 
----
+--- -->
 
-### ✔️ 작성한 할 일의 내용을 수정 (예상 완료: 2025년 3월 초)
+### ✔️ 작성한 할 일의 내용을 수정
 
 📍 문제  
 현재 사용자가 한 번 입력한 할 일은 삭제만 가능하며, 수정 기능이 없음
@@ -146,7 +175,7 @@ $ cd moment-app
 
 ---
 
-### ✔️ 카테고리 기능 추가 (예상 완료: 2025년 3월 중)
+### ✔️ 카테고리 기능 추가
 
 📍 문제  
 현재 입력한 할 일을 카테고리별로 분류할 수 없어서, 사용자가 많은 할 일을 관리할 때 비효율적임.
@@ -174,6 +203,11 @@ $ cd moment-app
   - JavaScript에서 `push()`를 활용하여 새로운 할 일을 배열에 추가하고, `filter()`를 활용하여 삭제하는 기능을 구현하는 방법을 학습
 
 - **OpenWeather API 데이터 처리**
+
   - API 호출을 통해 받아온 JSON 데이터를 `async/await`를 이용하여 **비동기코드를 처리하는 방법**을 학습
   - 응답 데이터를 분석하고, 필요한 정보(온도, 날씨 상태)를 추출하여 UI에 반영함
   - `try-catch`를 이용한 에러 핸들링과 로딩 상태 관리 방법에 대해서 학습
+
+- **Netlify Functions 기반 서버리스 API 프록시 구현**
+
+  - **클라이언트 사이드에서 API Key가 노출되는 문제**를 해결을 위해 **`.env` 파일에 API Key를 숨기고 Netlify Functions 서버리스 함수를 사용하는 방법**을 학습

@@ -1,13 +1,22 @@
 {
-  "name": "chrome-app",
+  "name": "moment-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "A vanilla JavaScript productivity app with To-Do, D-Day, quotes, and weather features.",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "netlify dev",
+    "start": "netlify dev",
+    "build": "echo 'No build step required'",
+    "test": "echo \"No tests configured yet\""
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "todo",
+    "weather",
+    "vanilla-js",
+    "netlify",
+    "productivity"
+  ],
+  "author": "Eileen",
+  "license": "MIT",
   "dependencies": {
     "dotenv": "^17.2.0"
   }
