@@ -18,12 +18,15 @@ function saveDday() {
 function removeEl(event) {
   const targetEl = event.target.parentElement;
 
-  if (targetEl.intervalId) {
-    clearInterval(targetEl.intervalId);
+  const intervalId = targetEl.dataset.intervalId;
+  const scheduleIntervalId = targetEl.dataset.scheduleIntervalId;
+
+  if (intervalId) {
+    clearInterval(parseInt(intervalId));
     console.log("delete interval (intervalId)");
   }
-  if (targetEl.scheduleIntervalId) {
-    clearTimeout(targetEl.scheduleIntervalId);
+  if (scheduleIntervalId) {
+    clearTimeout(parseInt(scheduleIntervalId));
     console.log("delete interval (scheduleIntervalId)");
   }
 
@@ -57,9 +60,9 @@ function paintDday(newDdayObj, li) {
     midnight.setHours(0, 0, 0, 0);
     const remainingTime = midnight.getTime() - now.getTime();
 
-    li.scheduleIntervalId = setTimeout(() => {
+    li.dataset.scheduleIntervalId = setTimeout(() => {
       countDays();
-      li.scheduleIntervalId = setInterval(countDays, 86400000);
+      li.dataset.intervalId = setInterval(countDays, 86400000);
     }, remainingTime);
   }
   countDays();
