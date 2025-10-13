@@ -108,14 +108,14 @@ chrome-app-js
 **1. 프로젝트 클론**
 
 ```bash
-$ git clone https://github.com/eileen819/moment-app.git
-$ cd moment-app
+git clone https://github.com/eileen819/moment-app.git
+cd moment-app
 ```
 
 **2. 의존성 설치**
 
 ```bash
-$ npm install
+npm install
 ```
 
 **3. `.env` 파일 생성**
@@ -127,7 +127,7 @@ API_KEY=your_openweather_api_key
 **4. Netlify CLI 실행 (로컬 서버 + 함수 통합 실행)**
 
 ```bash
-$ netlify dev
+netlify dev
 ```
 
 > ✅ http://localhost:8888에서 모든 기능 확인 가능  
