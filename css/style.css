@@ -246,6 +246,7 @@ a {
 
 main {
   max-width: 980px;
+  min-height: 70vh;
   margin: 0px auto;
   padding: 0px 20px;
 }
