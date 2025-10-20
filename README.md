@@ -13,6 +13,7 @@
 - HTML, CSS, JavaScript로 제작되어 **할 일 관리, D-Day, 랜덤 명언, 실시간 날씨 등의 기능을 제공**합니다.
 - 또한 **Netlify Functions 기반 서버리스 구조를 적용**해 API Key 보안을 강화하고,
   **반응형 디자인**으로 모바일 환경에서도 매끄러운 UX를 제공합니다.
+
   <br/>
 
 ## 💡 주요 기능
@@ -49,6 +50,7 @@
 - **Netlify Functions 기반 서버리스 구조를 적용**해, API 키 노출 문제를 해결하고 보안 수준을 강화
 - **프로젝트 구조를 기능 단위로 분리**(`clock.js`, `todo.js`, `weather.js` 등)하여 유지보수성과 가독성 향상
 - 단순 강의 복습을 넘어서 직접 기능을 추가/리팩토링하며 문제 해결 중심으로 확장
+
   <br/>
 
 ## 📁 프로젝트 구조
@@ -155,25 +157,27 @@ netlify dev
 
 ## 📚 기술적 인사이트
 
-- **DOM 조작 & 이벤트 핸들링**
+### 📍 DOM 조작 & 이벤트 핸들링
 
-  - JavaScript의 `addEventListener`, `querySelector` 등을 사용하여 동적인 UI를 구현
+- JavaScript의 `addEventListener`, `querySelector` 등을 사용하여 동적인 UI를 구현
 
-- **로컬 스토리지를 활용한 데이터 저장 방법**
+### 📍 로컬 스토리지를 활용한 데이터 저장 방법
 
-  - `localStorage`를 활용하여 사용자가 입력한 데이터를 브라우저에 저장
-  - 새로고침해도 데이터가 유지되도록 구현
+- `localStorage`를 활용하여 사용자가 입력한 데이터를 브라우저에 저장
+- 새로고침해도 데이터가 유지되도록 구현
 
-- **할 일 목록의 상태 관리 구현**
+### 📍 할 일 목록의 상태 관리 구현
 
-  - `push()`를 활용하여 새로운 To-Do 항목 추가
-  - `filter()`를 활용하여 기존 To-Do 항목을 삭제하는 기능을 구현
+- `push()`를 활용하여 새로운 To-Do 항목 추가
+- `filter()`를 활용하여 기존 To-Do 항목을 삭제하는 기능을 구현
 
-- **비동기 처리**
+### 📍 비동기 처리
 
-  - `async/await`와 `try-catch`를 이용한 `OpenWeather API` 요청 및 에러 핸들링 경험
-  - 응답 데이터를 분석하고, 필요한 정보(온도, 날씨 상태)를 추출하여 UI에 반영
+- `async/await`와 `try-catch`를 이용한 `OpenWeather API` 요청 및 에러 핸들링 경험
+- 응답 데이터를 분석하고, 필요한 정보(온도, 날씨 상태)를 추출하여 UI에 반영
 
-- **Netlify Functions 기반 서버리스 API 프록시 구현**
+### 📍 Netlify Functions 기반 서버리스 API 프록시 구현
 
-  - 클라이언트 사이드에서 API Key가 노출되는 문제를 해결을 위해, `.env` 환경 변수와 Netlify Functions로 API Key를 보호하는 구조 설계
+- 클라이언트 사이드에서 API Key가 노출되는 문제를 해결을 위해, `.env` 환경 변수와 Netlify Functions로 API Key를 보호하는 구조 설계
+
+<br />
