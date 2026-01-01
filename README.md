@@ -10,7 +10,7 @@
 ## 📌 프로젝트 개요
 
 - Moment App은 **사용자의 목표 관리와 생산성을 높이는 To-Do List 웹 애플리케이션**입니다.
-- HTML, CSS, Javascript로 제작되어 **할 일 관리, D-Day, 랜덤 명언, 실시간 날씨 등의 기능을 제공**합니다.
+- HTML, CSS, JavaScript로 제작되어 **할 일 관리, D-Day, 랜덤 명언, 실시간 날씨 등의 기능을 제공**합니다.
 - 또한 **Netlify Functions 기반 서버리스 구조를 적용**해 API Key 보안을 강화하고,
   **반응형 디자인**으로 모바일 환경에서도 매끄러운 UX를 제공합니다.
 
@@ -46,7 +46,7 @@
 ## 🔎 역할과 기여도
 
 - 개인 프로젝트로 진행하여 **기획, 설계, 개발, 배포 전 과정**을 단독 수행
-- 바닐라 Javascript만으로 **상태 관리(`localStorage`) 및 API 연동(`OpenWeather API`) 구조를 직접 설계**
+- 바닐라 JavaScript만으로 **상태 관리(`localStorage`) 및 API 연동(`OpenWeather API`) 구조를 직접 설계**
 - **Netlify Functions 기반 서버리스 구조를 적용**해, API 키 노출 문제를 해결하고 보안 수준을 강화
 - **프로젝트 구조를 기능 단위로 분리**(`clock.js`, `todo.js`, `weather.js` 등)하여 유지보수성과 가독성 향상
 - 단순 강의 복습을 넘어서 직접 기능을 추가/리팩토링하며 문제 해결 중심으로 확장
@@ -84,7 +84,7 @@ chrome-app-js
 
 | 분류                | 기술 / 도구                    | 설명                                    |
 | ------------------- | ------------------------------ | --------------------------------------- |
-| **Frontend**        | HTML, CSS, Javascript          | 구조 설계 및 동적 UI 구현               |
+| **Frontend**        | HTML, CSS, JavaScript          | 구조 설계 및 동적 UI 구현               |
 | **Storage**         | localStorage                   | 사용자 데이터(이름, D-Day, To-Do) 저장  |
 | **API Integration** | OpenWeather API                | 실시간 날씨 데이터 연동                 |
 | **Serverless**      | Netlify Functions              | API Key 보안 및 서버리스 프록시         |
@@ -99,7 +99,7 @@ chrome-app-js
 
 ### 🖥️ 로컬 실행 방법
 
-이 프로젝트는 HTML, CSS, Javascript를 기반으로 동작하며,  
+이 프로젝트는 HTML, CSS, JavaScript를 기반으로 동작하며,  
 실시간 날씨 기능은 Netlify Functions를 통해 서버리스 API를 호출하는 구조로 구성되어 있습니다.
 
 따라서 전체 기능을 테스트하려면 Netlify CLI를 사용해야 하며,  
@@ -159,7 +159,7 @@ netlify dev
 
 ### 📍 DOM 조작 & 이벤트 핸들링
 
-- Javascript의 `addEventListener`, `querySelector` 등을 사용하여 동적인 UI를 구현
+- JavaScript의 `addEventListener`, `querySelector` 등을 사용하여 동적인 UI를 구현
 
 ### 📍 로컬 스토리지를 활용한 데이터 저장 방법
 
