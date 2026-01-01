@@ -131,7 +131,7 @@ API_KEY=your_openweather_api_key
 netlify dev
 ```
 
-> ✅ http://localhost:8888에서 모든 기능 확인 가능  
+> ✅ http://localhost:8888 에서 모든 기능 확인 가능  
 > (Functions 요청은 자동으로 /api/\*로 라우팅됨)
 
 <br/>
