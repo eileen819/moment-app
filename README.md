@@ -2,8 +2,8 @@
 
 ### 🗒️ 이루고 싶은 목표와 할 일들을 관리해 보세요!
 
-![demo_image](/assets/demo.png)
 🔗 **Demo:** [Moment App](https://moment-of-today.netlify.app/)
+![demo_image](/assets/demo.png)
 
 <br/>
 
